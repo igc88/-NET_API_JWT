@@ -10,6 +10,8 @@ namespace NET_API_SQL_Proveedores.Models {
         public DbSet<Pieza> Cientificos { get; set; }
         public DbSet<Proveedor> Proyectos { get; set; }
         public DbSet<Suministro> Asignaciones { get; set; }
+
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Pieza>(entity => {
                 entity.ToTable("Piezas");
@@ -48,6 +50,39 @@ namespace NET_API_SQL_Proveedores.Models {
                 entity.HasOne(d => d.Pieza).WithMany(p => p.Suministros).HasForeignKey(d => d.CodigoPieza).HasForeignKey("FK1");
                 entity.HasOne(d => d.Proveedor).WithMany(p => p.Suministros).HasForeignKey(d => d.ProveedorId).HasForeignKey("FK2");
 
+            });
+
+            modelBuilder.Entity<UserInfo>(entity => {
+                entity.HasKey(e => e.UserId);
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_SQL\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj": {}
+    "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_JWT\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_SQL\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj": {
+    "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_JWT\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_SQL\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj",
+        "projectUniqueName": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_JWT\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj",
         "projectName": "NET_API_SQL_Proveedores",
-        "projectPath": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_SQL\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj",
+        "projectPath": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_JWT\\NET_API_SQL_Proveedores\\NET_API_SQL_Proveedores.csproj",
         "packagesPath": "C:\\Users\\Iago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_SQL\\NET_API_SQL_Proveedores\\obj\\",
+        "outputPath": "C:\\Users\\Iago\\source\\repos\\igc88\\NET_API_JWT\\NET_API_SQL_Proveedores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Iago\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.11, )"
@@ -69,6 +73,10 @@
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
